@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Sample Django Application</title>
+    </head>
+    <body>
+        <h1>Welcome to mystore!</h1>
+
+        {% for category in categories %}
+            <h2>{{ category.name }}</h2>
+            {% for product in category.product.all  %}
+                <a href="/product/{{ product.id }}">{{ product.name }}</a>
+            {% endfor %}
+        {% endfor %}
+    </body>
+</html>
